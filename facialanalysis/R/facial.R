@@ -101,10 +101,8 @@ faceplot<-function(data,path,pch=19, col="black") {
 #' @examples
 #'
 
-faceplot<-function(data,pch=19, col="black") {
-  library("imager")
-  plot(load.image("path"))
-  points(data$x,data$y, pch=pch, col=col)
+facegeo24<-function(data) {
+
 }
 
 

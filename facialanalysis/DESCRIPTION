@@ -1,12 +1,18 @@
 Package: facialanalysis
 Type: Package
-Title: Facial analysis (Title Case)
+Title: facialanalysis
 Version: 0.1.0
-Author: Xia Yiwei
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Date: 2017-9-10
+Author: Xia Yiwei 
+Maintainer: Xia Yiwei <Xiayiweinemo@gmail.com>
+Description: This package is build for process the facial image analysis
+License: GPL
 Encoding: UTF-8
 LazyData: true
+Depends: R (>= 3.0.1)
 RoxygenNote: 5.0.1
+Suggests: testthat,
+    knitr,
+    rmarkdown
+Imports: httr,imager,dplyr
+VignetteBuilder: knitr
