@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(devtools)\ninstall_github(\"xxxw567/legalwordproc\")\nlibrary(legalwordproc)\n\noutput<-faceplusplus(img.path=\"sample/image10.jpg\")\nfaceplot(output,path=\"sample/image10.jpg\")\n\n\n",
+    "created" : 1505054379801.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3008669021",
+    "id" : "3C7BBE59",
+    "lastKnownWriteTime" : 1505055408,
+    "last_content_update" : 1505055408374,
+    "path" : "~/OneDrive/image analysis/code/faceplus.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
