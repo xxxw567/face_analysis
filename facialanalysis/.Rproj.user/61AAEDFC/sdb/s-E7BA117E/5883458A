@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(devtools)\nlibrary(roxygen2)\nlibrary(testthat)\n\n#build package\n# cd c:/Users/xiayi_000/Documents/GitHub/\n#   R CMD INSTALL legalwordproc\n\n#Gen helpfile\nsite<-\"c:/Users/xiayi_000/Documents/GitHub/legalwordproc\"\nroxygenize(site)\nload_all(site)\ntest(site)\ndocument(site)\n#check\ncheck(site)\n\n##########################install\nlibrary(devtools)\ninstall_github(\"xxxw567/legalwordproc\")\n\nlibrary(legalwordproc)\n\n############################\n# #recode\n# setwd(site)\n# \n# ap<-rbind(c(1,stri_escape_unicode(\"??一??\")),\n#           c(1,stri_escape_unicode(\"??一\")),\n#           c(2,stri_escape_unicode(\"??两??\")),\n#           c(2,stri_escape_unicode(\"??两\")),\n#           c(2,stri_escape_unicode(\"??????\")),\n#           c(2,stri_escape_unicode(\"????\")),\n#           c(3,stri_escape_unicode(\"??????\")),\n#           c(3,stri_escape_unicode(\"????\")),\n#           c(4,stri_escape_unicode(\"???母?\")),\n#           c(4,stri_escape_unicode(\"????\")),\n#           c(5,stri_escape_unicode(\"??????\")),\n#           c(5,stri_escape_unicode(\"????\")),\n#           c(6,stri_escape_unicode(\"??????\")),\n#           c(6,stri_escape_unicode(\"????\")),\n#           c(7,stri_escape_unicode(\"???吒?\")),\n#           c(7,stri_escape_unicode(\"????\")),\n#           c(8,stri_escape_unicode(\"???烁?\")),\n#           c(8,stri_escape_unicode(\"????\")),\n#           c(9,stri_escape_unicode(\"???鸥?\")),\n#           c(9,stri_escape_unicode(\"????\")),\n#           c(10,stri_escape_unicode(\"??十??\")),\n#           c(10,stri_escape_unicode(\"??十\")),\n#           c(11,stri_escape_unicode(\"??十一??\")),\n#           c(11,stri_escape_unicode(\"??十一\"))\n#           )\n# colnames(ap)<-colnames(datacorr)\n# load(\"data/datacorr.rda\")\n# datacorr<-rbind(datacorr,ap)\n# save(datacorr,file=\"data/datacorr.rda\",compress=TRUE)\n# datacorr$chin<-stri_unescape_unicode(datacorr$chin)\n# datacorr$chin<-stri_escape_unicode(datacorr$chin)\n\n\n\n\n\n",
+    "created" : 1505057625937.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3842300102",
+    "id" : "5883458A",
+    "lastKnownWriteTime" : 1487523787,
+    "last_content_update" : 1487523787,
+    "path" : "~/Documents/GitHub/legalwordproc/pkgbuild.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,51 @@
+{
+    "debugBreakpointsState" : {
+        "breakpoints" : [
+            {
+                "editor_line_number" : 2,
+                "editor_state" : 1,
+                "function_name" : "toplevel",
+                "function_steps" : "",
+                "id" : 10,
+                "is_package_breakpoint" : false,
+                "is_pending_debug_completion" : false,
+                "line_number" : 2,
+                "needs_updated_steps" : false,
+                "package_name" : "",
+                "path" : "~/OneDrive/image analysis/code/faceplus.R",
+                "state" : 1,
+                "type" : 1
+            },
+            {
+                "editor_line_number" : 3,
+                "editor_state" : 1,
+                "function_name" : "toplevel",
+                "function_steps" : "",
+                "id" : 11,
+                "is_package_breakpoint" : false,
+                "is_pending_debug_completion" : false,
+                "line_number" : 3,
+                "needs_updated_steps" : false,
+                "package_name" : "",
+                "path" : "~/OneDrive/image analysis/code/faceplus.R",
+                "state" : 1,
+                "type" : 1
+            },
+            {
+                "editor_line_number" : 5,
+                "editor_state" : 1,
+                "function_name" : "toplevel",
+                "function_steps" : "",
+                "id" : 12,
+                "is_package_breakpoint" : false,
+                "is_pending_debug_completion" : false,
+                "line_number" : 5,
+                "needs_updated_steps" : false,
+                "package_name" : "",
+                "path" : "~/OneDrive/image analysis/code/faceplus.R",
+                "state" : 1,
+                "type" : 1
+            }
+        ]
+    }
+}

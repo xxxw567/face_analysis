@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' Post image to face++ and return face landmark\n#' @param img.path the path of image\n#' @param apikey api key\n#' @param seqkey secrit key\n#' @return data.frame\n#' @keywords basic\n#' @author Xia Yiwei\n#' @export\n#' @examples\n#'\n\nfaceplusplus<-function(img.path,apikey=\"i6aAp-TZNec1-HjPlzJS1oAaEcdRUHxi\",seqkey= \"dwobv2uNCA0MvUNTNwIiEmqQEn8jGGLR\") {\n  library(\"httr\")\n  library(\"imager\")\n  a<-POST(\"https://api-us.faceplusplus.com/facepp/v3/detect\",\n          body=list(\n            \"api_key\" =apikey ,\n            \"api_secret\" =seqkey,\n            \"image_file\" =  upload_file(img.path),\n            \"return_landmark\" = \"1\",\n            \"return_attributes\" = \"gender,age,smiling,headpose,facequality,blur,eyestatus,emotion,ethnicity,beauty,mouthstatus,eyegaze\"\n          ),\n          verbose()\n  )\n  output<-httr::content(a)\n  df=unlist(output$faces, use.names=TRUE)\n\n  data=data.frame(\n    type=strsplit(names(df), \".\", fixed = TRUE) [[1]][1] ,\n    pos=strsplit(names(df), \".\", fixed = TRUE) [[1]][2] ,\n    coord=strsplit(names(df), \".\", fixed = TRUE) [[1]][3] ,\n    value=df\n  )\n\n  data<-data.frame(lapply(data, as.character), stringsAsFactors=FALSE)\n\n  for (i in 1:length(df)) {\n    data[i,\"type\"]=strsplit(names(df), \".\", fixed = TRUE)[[i]][1]\n    data[i,\"pos\"]=strsplit(names(df), \".\", fixed = TRUE)[[i]][2]\n    data[i,\"coord\"]=strsplit(names(df), \".\", fixed = TRUE)[[i]][3]\n  }\n\n  fin<-data[data$coord==\"x\"|data$coord==\"y\",]\n  fin<-reshape(fin, idvar = \"pos\", stimevar = \"coord\", direction = \"wide\")\n  fin<-fin[,c(1,3,5)]\n  names(fin)<-c(\"value\",\"y\",\"x\")\n  return(fin)\n}\n\n#' find the distance between two points\n#' @param a x of first point\n#' @param b y of first point\n#' @param x x of first point\n#' @param y y of first point\n#' @return scalar\n#' @keywords basic\n#' @author Xia Yiwei\n#' @export\n#' @examples\n#'\n\ndistance<-function(a,b,x,y,type=\"abs\") {\n  if (type==\"abs\") {\n    xdif<-a-x\n    ydif<-b-y\n    return( sqrt(xdif*xdif+ydif*ydif) )\n  }\n}\n\n#' plot the dots the image\n#' @param data dataset contine \"x\" as x, \"y\" as y\n#' @param path path of image\n#' @return plot\n#' @keywords basic\n#' @author Xia Yiwei\n#' @export\n#' @examples\n#'\n\nfaceplot<-function(data,path,pch=19, col=\"black\") {\n  library(\"imager\")\n  plot(load.image(\"path\"))\n  points(data$x,data$y, pch=pch, col=col)\n}\n\n#' plot the dots the image\n#' @param data dataset contine \"x\" as x, \"y\" as y\n#' @param path path of image\n#' @return plot\n#' @keywords basic\n#' @author Xia Yiwei\n#' @export\n#' @examples\n#'\n\nfacegeo24<-function(data) {\n  #comb18 18:X70-X64\n  comb18<-distance(data)\n\n}\n\n\n\n\n\n# library(devtools)\n# library(roxygen2)\n# library(testthat)\n# site<-\"c:/Users/xiayi_000/Documents/GitHub/face_analysis/facialanalysis\"\n# roxygenize(site)\n# load_all(site)\n# test(site)\n# document(site)\n# check(site)\n",
+    "created" : 1505054358615.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2783603923",
+    "id" : "4F239E44",
+    "lastKnownWriteTime" : 1505057559,
+    "last_content_update" : 1505057559403,
+    "path" : "~/Documents/GitHub/face_analysis/facialanalysis/R/facial.R",
+    "project_path" : "R/facial.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
