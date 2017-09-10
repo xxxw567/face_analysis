@@ -9,7 +9,7 @@ Description: This package is build for process the facial image analysis
 License: GPL
 Encoding: UTF-8
 LazyData: true
-Depends: R (>= 3.3.3)
+Depends: R (>= 3.3.1)
 RoxygenNote: 5.0.1
 Suggests: testthat,
     knitr,
